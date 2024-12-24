@@ -29,10 +29,17 @@ const sendWebAppButton = (chatId) => {
   // Отправка запроса с помощью axios
   axios.post(TELEGRAM_API_URL, message)
     .then((response) => {
-      console.log("Message sent successfully:", response.data);
+      if (response.data.ok) {
+        console.log("Message sent successfully:", response.data);
+      } else {
+        console.error("Telegram API error:", response.data.description);
+      }
     })
     .catch((error) => {
       console.error("Error sending message:", error);
+      if (error.response) {
+        console.error("Error details:", error.response.data);
+      }
     });
 };
 
