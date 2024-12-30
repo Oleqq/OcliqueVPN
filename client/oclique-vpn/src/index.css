@@ -1,13 +1,331 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Benzin-Bold';
+  src: url('./assets/fonts/Benzin-Bold.ttf');
+  src: local('Benzin'), local('Benzin'),
+      url('./assets/fonts/Benzin-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Benzin-Semibold';
+  src: url('./assets/fonts/Benzin-Semibold.ttf');
+  src: local('Benzin'), local('Benzin'),
+      url('./assets/fonts/Benzin-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Benzin-ExtraBold';
+  src: url('./assets/fonts/Benzin-ExtraBold.ttf');
+  src: local('Benzin'), local('Benzin'),
+      url('./assets/fonts/Benzin-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Benzin-Regular';
+  src: url('./assets/fonts/Benzin-Regular.ttf');
+  src: local('Benzin'), local('Benzin'),
+      url('./assets/fonts/Benzin-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Benzin-Medium';
+  src: url('./assets/fonts/Benzin-Medium.ttf');
+  src: local('Benzin'), local('Benzin'),
+      url('./assets/fonts/Benzin-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --font-family: "Benzin-ExtraBold", sans-serif;
+  --second-family: "Benzin-Regular", sans-serif;
+  --third-family: "Benzin-Medium", sans-serif;
+  --font3: "Inter", sans-serif;
 }
+
+.app {
+  position: relative;
+}
+.app__bg {
+  height: 100%;
+  position: absolute;
+  bottom: -1px;
+  z-index: -10;
+  right: -182px;
+}
+
+.logo svg {
+  display: flex;
+  width: 100%;
+  transition: 1s ease;
+
+}
+.logo {
+  position: absolute;
+  top: 14px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+}
+
+
+.home-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 0 42px;
+}
+
+.home-screen__tips {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2vw;
+  position: absolute;
+  bottom: 7vh;
+}
+.home-screen__tip  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-screen__tip h3 {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 139%;
+  color: #fff;  
+  margin: 0;
+}
+
+.subscription-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qr-container {
+  margin: 20px 0;
+}
+
+.qr-code {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.user-id {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.subscription-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+  color: #444;
+}
+
+.icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: black;
+  color: white;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-screen {
+  text-align: center;
+}
+
+.logo h1 {
+  font-size: 24px;
+  background: linear-gradient(to right, #8a2be2, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.connect-button {
+  background-color: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  text-transform: lowercase;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 347px;
+  height: 84px;
+
+  background-image: url(./assets/img/Mesh.png);
+  background-position: center
+}
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-around;
+  background: #1E1E1E;
+  padding: 10px 0;
+}
+
+.nav-item {
+  font-size: 16px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav-item:hover {
+  color: #00ffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-height:930px) {
+  .logo svg {
+    width: 350px;
+    height: 300px;
+  }
+}
+@media (max-height:850px) {
+  .logo svg {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+
+/* Основные стили приложения */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+/* Анимация для экранов */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Анимации для экрана */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* Анимация для меню */
+.fade-in-menu {
+  opacity: 0;
+  animation: fadeInMenu 1.5s ease forwards;
+}
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fade-in-content {
+  animation: fadeInContent 1s ease forwards;
+}
+/* Анимация для плавного появления контента после загрузки */
+@keyframes fadeInContent {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
